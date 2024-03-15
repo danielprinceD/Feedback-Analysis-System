@@ -1,0 +1,18 @@
+.slides-container img {
+  width: 100%;
+}
+.slides-container {
+  display: flex;
+  width: 50%;
+  border-radius: 50%;
+  background: transparent;
+}
+.carousel-content-container {
+}
+.carousel-container {
+  display: flex;
+  justify-content: space-around;
+}
+.slider-conatainer {
+  display: block;
+}
