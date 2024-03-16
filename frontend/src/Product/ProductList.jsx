@@ -6,14 +6,23 @@ import "./productlist.css";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { usePContext } from "./ProductContext";
+import { usePurchase } from "./PurchaseContext";
 export const ProductList = () => {
   const [list, setList] = useState([]);
   const pcontext = usePContext();
+  const buycontext = usePurchase();
   useEffect(() => {
     axios
       .get("http://localhost:3001/products")
       .then((res) => setList(res.data));
   });
+  let handlePurcase = (x) => {
+    buycontext.setId(x.id);
+    buycontext.setTitle(x.title);
+    buycontext.setDesc(x.description);
+    buycontext.setPrice(x.price);
+    buycontext.setImg(x.image);
+  };
   let handlePContext = (x) => {
     pcontext.setId(x.id);
     pcontext.setTitle(x.title);
@@ -47,7 +56,11 @@ export const ProductList = () => {
                   gap: 30,
                 }}
               >
-                <Button variant="success">Buy</Button>
+                <NavLink to="buy">
+                  <Button variant="success" onClick={() => handlePurcase(x)}>
+                    ₹ {x.price}
+                  </Button>
+                </NavLink>
                 <NavLink to={`${x.id}`}>
                   <Button variant="primary" onClick={() => handlePContext(x)}>
                     Feedback

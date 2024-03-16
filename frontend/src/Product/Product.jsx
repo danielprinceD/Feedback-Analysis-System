@@ -6,6 +6,7 @@ import { usePContext } from "./ProductContext";
 import { useNavigate } from "react-router-dom";
 import Sentiment from "sentiment";
 const sentiment = new Sentiment();
+const date = new Date();
 export const Product = () => {
   const pcontext = usePContext();
   const navigate = useNavigate();
@@ -28,6 +29,8 @@ export const Product = () => {
               ? "Positive"
               : "Negative",
           user: sessionStorage.getItem("name"),
+          date: date.toLocaleDateString(),
+          time: date.toLocaleTimeString(),
         },
       ],
     });

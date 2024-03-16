@@ -6,15 +6,16 @@ import { useAuth } from "./Auth";
 export const Login = () => {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
+  const [id, setId] = useState();
   const [list, setList] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3002/users").then((req) => setList(req.data));
-  });
+  }, []);
   let validate = list.some((u) => u.username === user && u.password === pass);
-
   const handleSubmit = () => {
     if (validate) {
       auth.login(user);
+      sessionStorage.setItem("password", pass);
       navigate("/");
     } else {
       alert("Enter Valid Username and Password");

@@ -1,27 +1,21 @@
-import React, { useState } from "react";
-import { useContext } from "react";
-
-const PContext = React.createContext();
-
-export const ProductContext = ({ children }) => {
+import React, { Children } from "react";
+import { useContext, useState } from "react";
+const BuyContext = React.createContext();
+const PurchaseContext = ({ children }) => {
   const [id, setId] = useState();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
-  const [feedback, setFeedback] = useState([]);
-
   return (
     <div>
-      <PContext.Provider
+      <BuyContext.Provider
         value={{
           id,
           title,
           desc,
           price,
           img,
-          feedback,
-          setFeedback,
           setImg,
           setPrice,
           setDesc,
@@ -30,10 +24,13 @@ export const ProductContext = ({ children }) => {
         }}
       >
         {children}
-      </PContext.Provider>
+      </BuyContext.Provider>
     </div>
   );
 };
-export const usePContext = () => {
-  return useContext(PContext);
+
+export default PurchaseContext;
+
+export const usePurchase = () => {
+  return useContext(BuyContext);
 };

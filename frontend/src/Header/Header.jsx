@@ -33,7 +33,7 @@ export const Header = () => {
               <div style={{ padding: 10 }} className="btn-container">
                 <h6>User : {sessionStorage.getItem("name")}</h6>
                 <button
-                  style={{ width: 70, height: 30 }}
+                  className="btn btn-danger text-white"
                   onClick={() => {
                     auth.logout();
                   }}

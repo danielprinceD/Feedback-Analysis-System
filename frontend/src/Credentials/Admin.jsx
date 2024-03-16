@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Outlet, NavLink } from "react-router-dom";
 import { ProductList } from "../Product/ProductList";
+import { Link } from "react-router-dom";
 export const Admin = () => {
   const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
@@ -45,10 +46,7 @@ export const Admin = () => {
     });
   };
   return (
-    <div className="admin-container">
-      <div className="admin-header">
-        <h2>Admin</h2>
-      </div>
+    <div className="admin-container d-flex flex-column  gap-5">
       <div className="admin-control">
         <center>
           <form

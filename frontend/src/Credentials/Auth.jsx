@@ -14,6 +14,8 @@ export const Auth = ({ children }) => {
   const logout = () => {
     setUser("");
     sessionStorage.setItem("name", "");
+    sessionStorage.setItem("password", "");
+    sessionStorage.setItem("id", "");
     navigate("/");
   };
   return (
