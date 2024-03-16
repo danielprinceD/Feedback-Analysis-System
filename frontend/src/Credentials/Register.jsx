@@ -10,7 +10,7 @@ export const Register = () => {
   const [email, setEmail] = useState();
   let handleSignup = () => {
     axios
-      .post("http://localhost:8001/users", {
+      .post("http://localhost:3002/users", {
         username: user,
         password: pass,
         email: email,

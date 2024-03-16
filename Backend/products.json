@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "title": "Laptop",
+      "price": "100000",
+      "description": "10GB RAM",
+      "image": "https://betanews.com/wp-content/uploads/2014/11/front.jpg",
+      "feedback": [
+        {
+          "message": "Good Product",
+          "status": ""
+        },
+        {
+          "message": "Nice Product",
+          "status": ""
+        },
+        {
+          "message": "good product but high price",
+          "status": "",
+          "user": "admin"
+        },
+        {
+          "message": "this is not good product",
+          "status": "Negative",
+          "user": "admin"
+        },
+        {
+          "message": "this is good product",
+          "status": "Positive",
+          "user": "admin"
+        }
+      ],
+      "id": "c7a7"
+    }
+  ]
+}

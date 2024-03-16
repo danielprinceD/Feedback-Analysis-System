@@ -13,6 +13,14 @@ export const Nav = () => {
       <NavLink to="/about" className=" text-decoration-none">
         About Us
       </NavLink>
+      <NavLink to="/products" className=" text-decoration-none">
+        Products
+      </NavLink>
+      {sessionStorage.getItem("name") == "admin" && (
+        <NavLink to="/admin" className=" text-decoration-none">
+          Admin
+        </NavLink>
+      )}
     </div>
   );
 };

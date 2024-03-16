@@ -8,7 +8,7 @@ export const Login = () => {
   const [pass, setPass] = useState("");
   const [list, setList] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8001/users").then((req) => setList(req.data));
+    axios.get("http://localhost:3002/users").then((req) => setList(req.data));
   });
   let validate = list.some((u) => u.username === user && u.password === pass);
 

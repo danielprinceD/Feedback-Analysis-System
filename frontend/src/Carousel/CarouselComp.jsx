@@ -21,10 +21,6 @@ export const CarouselComp = () => {
       <div className="slider-conatainer">
         <Slider {...settings} style={{ width: 400 }}>
           <div className="slides-container">
-            <img src={luffy} alt="" />
-            <h2>Toys</h2>
-          </div>
-          <div className="slides-container">
             <img src={smartt} alt="" />
             <h2>Smart Watch</h2>
           </div>
@@ -35,6 +31,10 @@ export const CarouselComp = () => {
           <div className="slides-container">
             <img src={ear} alt="" />
             <h2>Headphone</h2>
+          </div>
+          <div className="slides-container">
+            <img src={luffy} alt="" />
+            <h2>Toys</h2>
           </div>
         </Slider>
       </div>

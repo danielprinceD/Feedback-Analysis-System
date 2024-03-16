@@ -95,6 +95,12 @@
       "username": "123",
       "password": "123",
       "email": "github@gmail.com"
+    },
+    {
+      "id": "ff9b",
+      "username": "admin",
+      "password": "123",
+      "email": "admin@gm.com"
     }
   ]
 }
