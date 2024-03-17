@@ -3,26 +3,62 @@ import "./login1.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 toast.configure();
 export const Register = () => {
   const [user, setUser] = useState();
   const [pass, setPass] = useState();
   const [email, setEmail] = useState();
-  let handleSignup = () => {
-    axios
-      .post("http://localhost:3002/users", {
-        username: user,
-        password: pass,
-        email: email,
-      })
-      .then(() => {
-        toast("Registered Successfully", { containerId: "C" });
-      });
+  const navigate = useNavigate();
+  let handleSignup = (e) => {
+    e.preventDefault();
+    user && pass && email
+      ? axios
+          .post("http://localhost:3002/users", {
+            username: user,
+            password: pass,
+            email: email,
+          })
+          .then(() => {
+            toast.success("Registered Successfully", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            navigate("/login");
+          })
+          .catch(() => {
+            toast.error("Registration Failed", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          })
+      : toast.error("Fill the Signup Form", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
   };
 
   return (
     <div className="sign-cont">
-      <form action="#" className="form-si" onSubmit={handleSignup}>
+      <form action="#" className="form-si" onSubmit={(e) => handleSignup(e)}>
         <h1 className="form-title-si">Sign up Form</h1>
         <div className="firstbtn-si"></div>
         <div className="form-group-si">

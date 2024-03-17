@@ -3,6 +3,7 @@ import "./login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./Auth";
+import { toast } from "react-toastify";
 export const Login = () => {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
@@ -12,13 +13,32 @@ export const Login = () => {
     axios.get("http://localhost:3002/users").then((req) => setList(req.data));
   }, []);
   let validate = list.some((u) => u.username === user && u.password === pass);
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (validate) {
       auth.login(user);
       sessionStorage.setItem("password", pass);
+      toast.success("Login Success", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       navigate("/");
     } else {
-      alert("Enter Valid Username and Password");
+      toast.error(" Invalid Credentials", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
   const navigate = useNavigate();
@@ -26,7 +46,7 @@ export const Login = () => {
 
   return (
     <div className="box-con">
-      <form action="#" className="form-con" onSubmit={handleSubmit}>
+      <form action="#" className="form-con" onSubmit={(e) => handleSubmit(e)}>
         <h1 className="form-title-con">Login Form</h1>
         <div className="firstbtn-con"></div>
         <div class="form-group-con">

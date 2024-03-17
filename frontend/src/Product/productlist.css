@@ -4,3 +4,11 @@
   gap: 100px;
   padding: 0 30px 0 30px;
 }
+.product-outlet-container {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.blurrinig-effect {
+  filter: blur(20px);
+}

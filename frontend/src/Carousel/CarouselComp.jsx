@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import luffy from "../assets/toy.png";
 import smartt from "../assets/smartt.png";
 import sma from "../assets/sma.png";
+import { NavLink } from "react-router-dom";
 import ear from "../assets/ear.png";
 export const CarouselComp = () => {
   var settings = {
@@ -17,7 +18,19 @@ export const CarouselComp = () => {
   };
   return (
     <div className="carousel-container">
-      <div className="carousel-content-container">Hello</div>
+      <div className="carousel-content-container">
+        <p>
+          Welcome to BTM Company, your one-stop destination for all your product
+          needs! We are a leading online platform dedicated to providing you
+          with a seamless shopping experience and a vast array of high-quality
+          products at competitive prices
+        </p>
+        <div>
+          <NavLink htmlFor to="/products">
+            <button className="btn btn-primary"> Explore</button>
+          </NavLink>
+        </div>
+      </div>
       <div className="slider-conatainer">
         <Slider {...settings} style={{ width: 400 }}>
           <div className="slides-container">

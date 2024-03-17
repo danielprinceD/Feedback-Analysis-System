@@ -1,0 +1,36 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.why-container {
+  background-image: url("../assets/whyUs.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+}
+.why-container h2 {
+  text-shadow: 2px 2px 2px black;
+}
+.why-list-container li span {
+  color: red;
+}
+.why-list-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  text-align: justify;
+  font-size: larger;
+  font-weight: 500;
+  padding: 20px 0 20px 0;
+  align-content: center;
+  list-style: none;
+}
+.home-slider-container img {
+  width: 400px;
+}

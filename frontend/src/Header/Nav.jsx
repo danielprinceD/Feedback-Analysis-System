@@ -16,6 +16,9 @@ export const Nav = () => {
       <NavLink to="/products" className=" text-decoration-none">
         Products
       </NavLink>
+      <NavLink to="/myOrder" className=" text-decoration-none">
+        My Orders
+      </NavLink>
       {sessionStorage.getItem("name") == "admin" && (
         <NavLink to="/admin" className=" text-decoration-none">
           Admin

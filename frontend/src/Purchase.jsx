@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { usePurchase } from "./Product/PurchaseContext";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const Purchase = () => {
+  const navigate = useNavigate();
   const getBuy = usePurchase();
   const [amount, setAmount] = useState(1);
   const [password, setPassword] = useState("");
   const date = new Date();
 
-  let handleSubmit = () => {
+  let handleSubmit = (e) => {
+    e.preventDefault();
     if (
       password === sessionStorage.getItem("password") &&
       amount !== "" &&
@@ -20,11 +24,21 @@ const Purchase = () => {
         time: date.toLocaleTimeString(),
         date: date.toLocaleDateString(),
       });
-      alert("Order Placed");
+      toast.success("Thankyou for Purchasing our Product", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      navigate("/myOrder");
     } else alert("Enter Valid Input");
   };
 
-  return (
+  return sessionStorage.getItem("name") ? (
     (getBuy.title || getBuy.price) && (
       <>
         <h1>Purchase</h1>
@@ -59,7 +73,7 @@ const Purchase = () => {
               <div>
                 <button
                   type="submit"
-                  onClick={handleSubmit}
+                  onClick={(e) => handleSubmit(e)}
                   className="btn btn-success"
                 >
                   Add to Cart
@@ -70,6 +84,17 @@ const Purchase = () => {
         </div>
       </>
     )
+  ) : (
+    <div>
+      <br />
+      <br />
+      <br />
+      <h4 className="text-warning bg-white d-inline px-5 py-2">
+        Login to place Order
+      </h4>
+      <br />
+      <br />
+    </div>
   );
 };
 

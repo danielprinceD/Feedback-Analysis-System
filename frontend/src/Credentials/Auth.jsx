@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import React from "react";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const AuthContext = React.createContext();
 export const Auth = ({ children }) => {
@@ -9,13 +10,22 @@ export const Auth = ({ children }) => {
     setUser(name);
     sessionStorage.setItem("name", name);
     navigate("/");
-    alert("Welcome " + name);
   };
   const logout = () => {
     setUser("");
     sessionStorage.setItem("name", "");
     sessionStorage.setItem("password", "");
     sessionStorage.setItem("id", "");
+    toast.success("Logout Success", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     navigate("/");
   };
   return (

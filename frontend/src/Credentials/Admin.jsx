@@ -3,23 +3,51 @@ import axios from "axios";
 import { Outlet, NavLink } from "react-router-dom";
 import { ProductList } from "../Product/ProductList";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
 export const Admin = () => {
   const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
   const handleSubmit = (e) => {
-    axios.post("http://localhost:3001/products", {
-      title: title,
-      description: desc,
-      price: price,
-      image: img,
-      feedback: [],
-    });
-    setImg("");
-    setTitle("");
-    setDesc("");
-    setPrice("");
+    e.preventDefault();
+    !(title && price)
+      ? toast.error("Name and Price should be filled !", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      : axios
+          .post("http://localhost:3001/products", {
+            title: title,
+            description: desc,
+            price: price,
+            image: img,
+            feedback: [],
+          })
+          .then(() => {
+            toast.success("Product Created", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+
+            setImg("");
+            setTitle("");
+            setDesc("");
+            setPrice("");
+          });
   };
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -36,7 +64,8 @@ export const Admin = () => {
   const [desc1, setDesc1] = useState("");
   const [price1, setPrice1] = useState("");
   const [pop, setPop] = useState(false);
-  const handleEdit = (id) => {
+  const handleEdit = (id, e) => {
+    e.preventDefault();
     axios.put(`http://localhost:3001/products/${id}`, {
       title: title1,
       description: desc1,
@@ -44,6 +73,17 @@ export const Admin = () => {
       image: img1,
       feedback: [],
     });
+    toast.success("Product is Updated", {
+      position: "top-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setPop(false);
   };
   return (
     <div className="admin-container d-flex flex-column  gap-5">
@@ -130,7 +170,7 @@ export const Admin = () => {
               <form
                 action=""
                 className="w-50"
-                onSubmit={() => handleEdit(id)}
+                onSubmit={(e) => handleEdit(id, e)}
                 style={{ display: "flex", flexDirection: "column", gap: 10 }}
               >
                 <input

@@ -8,8 +8,19 @@
   background: transparent;
 }
 .carousel-content-container {
+  display: flex;
+  place-content: center;
+  gap: 20px;
+  width: 50%;
+  flex-direction: column;
+}
+.carousel-content-container p {
+  font-size: larger;
+  font-weight: 600;
+  text-align: justify;
 }
 .carousel-container {
+  position: relative;
   display: flex;
   justify-content: space-around;
 }

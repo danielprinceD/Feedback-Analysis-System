@@ -63,7 +63,7 @@ const Analyzer = () => {
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
-                      <th scope="col">Feedback Time</th>
+                      <th scope="col">Feedback </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -92,7 +92,7 @@ const Analyzer = () => {
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
-                      <th scope="col">Feedback Time</th>
+                      <th scope="col">Feedback</th>
                     </tr>
                   </thead>
                   <tbody>

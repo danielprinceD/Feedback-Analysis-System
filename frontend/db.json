@@ -101,6 +101,18 @@
       "username": "admin",
       "password": "123",
       "email": "admin@gm.com"
+    },
+    {
+      "id": "b3e3",
+      "username": "'",
+      "password": "1",
+      "email": "123@gmail"
+    },
+    {
+      "id": "c1c8",
+      "username": "1",
+      "password": "1",
+      "email": "12@gm.com"
     }
   ]
 }

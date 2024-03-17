@@ -31,10 +31,21 @@ export const ProductList = () => {
     pcontext.setImg(x.image);
     pcontext.setFeedback(x.feedback);
   };
+  const [pop, setPop] = useState(false);
+  let controlBlur = pop ? "blurrinig-effect" : "";
   return (
     <div className="productlist-cont">
-      <Outlet></Outlet>
-      <div className="productlist-container">
+      <div className="product-outlet-container">
+        {pop && (
+          <>
+            <Outlet></Outlet>
+            <button className="btn btn-danger" onClick={() => setPop(false)}>
+              Cancel
+            </button>
+          </>
+        )}
+      </div>
+      <div className={"productlist-container " + controlBlur}>
         {list.map((x) => (
           <Card style={{ width: "18rem" }}>
             <div
@@ -57,12 +68,24 @@ export const ProductList = () => {
                 }}
               >
                 <NavLink to="buy">
-                  <Button variant="success" onClick={() => handlePurcase(x)}>
+                  <Button
+                    variant="success"
+                    onClick={() => {
+                      setPop(true);
+                      handlePurcase(x);
+                    }}
+                  >
                     ₹ {x.price}
                   </Button>
                 </NavLink>
                 <NavLink to={`${x.id}`}>
-                  <Button variant="primary" onClick={() => handlePContext(x)}>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      handlePContext(x);
+                      setPop(true);
+                    }}
+                  >
                     Feedback
                   </Button>
                 </NavLink>
