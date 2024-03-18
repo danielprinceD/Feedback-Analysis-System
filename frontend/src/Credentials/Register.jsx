@@ -58,7 +58,12 @@ export const Register = () => {
 
   return (
     <div className="sign-cont">
-      <form action="#" className="form-si" onSubmit={(e) => handleSignup(e)}>
+      <form
+        action="#"
+        className="form-si"
+        onSubmit={(e) => handleSignup(e)}
+        data-aos="flip-right"
+      >
         <h1 className="form-title-si">Sign up Form</h1>
         <div className="firstbtn-si"></div>
         <div className="form-group-si">

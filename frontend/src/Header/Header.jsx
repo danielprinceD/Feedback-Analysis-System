@@ -9,11 +9,11 @@ import { useAuth } from "../Credentials/Auth";
 export const Header = () => {
   const auth = useAuth();
   return (
-    <div className="header-container">
+    <div className="header-container" data-aos="fade-down">
       <div className="head-left-container">
         <div className="head-logo">
           <img src={logo} alt="" />
-          <h1>{}</h1>
+          <h1></h1>
         </div>
       </div>
       <div className="head-center-container">

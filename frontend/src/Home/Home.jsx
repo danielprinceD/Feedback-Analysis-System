@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -15,7 +15,7 @@ import ho3 from "../assets/home/3.jpg";
 import he1 from "../assets/health/1.jpg";
 import he2 from "../assets/health/2.jpeg";
 import he3 from "../assets/health/3.jpg";
-
+import AOS from "aos";
 import { CarouselComp } from "../Carousel/CarouselComp";
 export const Home = () => {
   return (
@@ -24,8 +24,10 @@ export const Home = () => {
         <CarouselComp></CarouselComp>
       </div>
       <div className="why-container">
-        <h2 className="text-primary">Why Choose Us?</h2>
-        <ul className="why-list-container">
+        <h2 className="text-primary" data-aos="fade-down">
+          Why Choose Us?
+        </h2>
+        <ul className="why-list-container" data-aos="fade-in">
           <li>
             <span> Extensive Product Range:</span> From electronics and fashion
             to home decor and wellness products, we have everything you need
@@ -61,7 +63,7 @@ export const Home = () => {
               Electronics: Discover the latest gadgets and tech accessories to
               enhance your digital lifestyle.
             </h5>
-            <div style={{ width: 500 }}>
+            <div style={{ width: 500 }} data-aos="flip-up">
               <Carousel>
                 <div className="home-slider-container">
                   <img src={e1} style={{ borderRadius: 20 }} />
@@ -80,7 +82,7 @@ export const Home = () => {
               Fashion: Stay stylish with our trendy clothing, footwear, and
               accessories for all occasions.
             </h5>
-            <div style={{ width: 500 }}>
+            <div style={{ width: 500 }} data-aos="flip-up">
               <Carousel>
                 <div className="home-slider-container">
                   <img src={f1} style={{ borderRadius: 20 }} />
@@ -99,7 +101,7 @@ export const Home = () => {
               Home & Living: Beautify your space with our collection of home
               decor, furniture, and kitchen essentials.
             </h5>
-            <div style={{ width: 500 }}>
+            <div style={{ width: 500 }} data-aos="flip-up">
               <Carousel>
                 <div>
                   <img src={ho1} style={{ borderRadius: 20 }} />
@@ -118,7 +120,7 @@ export const Home = () => {
               Health & Wellness: Take care of yourself with our range of
               wellness products, fitness equipment, and nutritional supplements.
             </h5>
-            <div style={{ width: 500 }}>
+            <div style={{ width: 500 }} data-aos="flip-up">
               <Carousel>
                 <div>
                   <img src={he1} style={{ borderRadius: 20 }} />

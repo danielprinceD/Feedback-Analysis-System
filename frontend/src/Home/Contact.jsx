@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="d-flex flex-column align-items-center gap-5">
       <h3>Contact Form</h3>
-      <form className="w-50 d-flex flex-column gap-3">
+      <form className="w-50 d-flex flex-column gap-3" data-aos="zoom-in-down">
         <div class="form-group">
           <label for="exampleFormControlInput1">Email address : </label>
           <input

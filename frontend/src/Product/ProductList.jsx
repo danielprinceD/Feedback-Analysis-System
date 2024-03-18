@@ -47,14 +47,14 @@ export const ProductList = () => {
       </div>
       <div className={"productlist-container " + controlBlur}>
         {list.map((x) => (
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem" }} data-aos="fade-right">
             <div
               style={{ display: "flex", placeContent: "center", padding: 50 }}
             >
               <Card.Img
                 variant="top"
                 src={x.image}
-                style={{ width: 200, height: 200 }}
+                style={{ width: 200, height: 200, borderRadius: 20 }}
               />
             </div>
             <Card.Body>

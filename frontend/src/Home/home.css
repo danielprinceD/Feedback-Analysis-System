@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 100px;
 }
+.about-pad {
+  padding: 180px;
+}
 .why-container {
   background-image: url("../assets/whyUs.jpg");
   background-repeat: no-repeat;

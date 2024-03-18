@@ -46,7 +46,12 @@ export const Login = () => {
 
   return (
     <div className="box-con">
-      <form action="#" className="form-con" onSubmit={(e) => handleSubmit(e)}>
+      <form
+        action="#"
+        className="form-con"
+        onSubmit={(e) => handleSubmit(e)}
+        data-aos="flip-left"
+      >
         <h1 className="form-title-con">Login Form</h1>
         <div className="firstbtn-con"></div>
         <div class="form-group-con">

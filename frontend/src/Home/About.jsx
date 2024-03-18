@@ -3,7 +3,10 @@ import React from "react";
 const About = () => {
   return (
     <div className="d-flex flex-column align-items-center py-5 gap-5">
-      <div className="w-75 d-flex flex-column gap-4">
+      <div
+        className="w-75 d-flex flex-column gap-4 about-pad"
+        data-aos="fade-down-right"
+      >
         <h2 className="text-primary">About Us</h2>
         <h4>
           Welcome to Our Company! We are a passionate team of individuals
@@ -11,8 +14,11 @@ const About = () => {
         </h4>
       </div>
       <br />
-      <div className="w-75 d-flex flex-column gap-4 ">
-        <h2 className="text-primary">Who We Are ?</h2>
+      <div
+        className="w-75 d-flex flex-column gap-4 about-pad"
+        data-aos="fade-down-left"
+      >
+        <h2 className="text-primary ">Who We Are ?</h2>
         <h4>
           At this place, we strive to be more than just an e-commerce platform.
           We are a community of like-minded individuals who believe in the power
@@ -22,7 +28,10 @@ const About = () => {
         </h4>
       </div>
       <br />
-      <div className="w-75 d-flex flex-column gap-4">
+      <div
+        className="w-75 d-flex flex-column gap-4 about-pad"
+        data-aos="fade-down-right"
+      >
         <h2 className="text-primary">Our Mission</h2>
         <h4>
           Our mission is simple yet ambitious – to provide you with a seamless
@@ -35,7 +44,7 @@ const About = () => {
       </div>
       <br />
       <br />
-      <table class="table w-75">
+      <table class="table w-75 about-pad" data-aos="fade-down-left">
         <thead>
           <tr>
             <th scope="col">Our Value</th>

@@ -17,6 +17,7 @@ const Analyzer = () => {
             image: x.image,
             price: x.price,
             feedback: u.message,
+            user: u.user,
             date: u.date,
             time: u.time,
           })
@@ -28,6 +29,7 @@ const Analyzer = () => {
             image: x.image,
             price: x.price,
             feedback: u.message,
+            user: u.user,
             date: u.date,
             time: u.time,
           });
@@ -63,6 +65,7 @@ const Analyzer = () => {
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
+                      <th scope="col">User</th>
                       <th scope="col">Feedback </th>
                     </tr>
                   </thead>
@@ -75,6 +78,7 @@ const Analyzer = () => {
                       <td>{u.title}</td>
                       <td>{u.description}</td>
                       <td>{u.price}</td>
+                      <td>{u.user}</td>
                       <td>{u.feedback}</td>
                     </tr>
                   </tbody>
@@ -92,6 +96,7 @@ const Analyzer = () => {
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
+                      <th scope="col">User</th>
                       <th scope="col">Feedback</th>
                     </tr>
                   </thead>
@@ -104,6 +109,7 @@ const Analyzer = () => {
                       <td>{u.title}</td>
                       <td>{u.description}</td>
                       <td>{u.price}</td>
+                      <td>{u.user}</td>
                       <td>{u.feedback}</td>
                     </tr>
                   </tbody>
